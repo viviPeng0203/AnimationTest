@@ -143,7 +143,24 @@
 </section>
 <section class="block -bu">
     <div class="wrap">
-        定住畫面 滾動換icon與文字
+        <div class="scrollText">
+            <div class="scrollText-text">
+                <div class="text">需要加被呵護與灌溉</div>
+                <div class="text an">國泰用心照護您心中的樹</div>
+                <div class="text an">改變您對銀行的想像</div>
+            </div>
+            <div class="scrollText-icon">
+                <div class="icon">
+                    <img src="./content/images/icon/earth.svg" alt="">
+                </div>
+                <div class="icon an">
+                    <img src="./content/images/icon/tree.svg" alt="">
+                </div>
+                <div class="icon an">
+                    <img src="./content/images/icon/energy.svg" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="block -pl">
@@ -173,9 +190,13 @@
 <script>
 "use strict";
 
-$(function () {});
+gsap.registerPlugin(ScrollTrigger);
 </script>
 
+<script src="./content/js/banner.js"></script>
+<script src="./content/js/green.js"></script>
+<script src="./content/js/card.js"></script>
+<script src="./content/js/scrollText.js"></script>
 
     <!-- Page js / End -->
 

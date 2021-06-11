@@ -1,0 +1,1 @@
+"use strict";var tl=gsap.timeline({defaults:{ease:"power2.out"}});function showMessage(e){console.log(e)}tl.from("h2",{duration:2,scale:6,opacity:0}).from(".block.-pk .fadeIn",{duration:2,opacity:0,delay:-1.5,stagger:.5});

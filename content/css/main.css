@@ -289,9 +289,11 @@ body.aps {
               transform: translate(-50%, -50%);
       width: 100%; }
   .block.-bu {
-    background-color: lightskyblue; }
+    background-color: lightskyblue;
+    padding: 200px 0; }
   .block.-pl {
-    background-color: darkslateblue; }
+    background-color: darkslateblue;
+    height: 100vh; }
 
 .wrap {
   box-sizing: border-box;
@@ -415,6 +417,38 @@ p {
   .card__content {
     padding: 20px;
     padding-top: 0; }
+
+.scrollText {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-align-items: center;
+          align-items: center; }
+  .scrollText-text, .scrollText-icon {
+    -webkit-flex: 0 0 auto;
+            flex: 0 0 auto; }
+  .scrollText-icon {
+    position: relative; }
+
+.text + .text {
+  margin-top: 20px; }
+
+.text:first-of-type {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5); }
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: lightskyblue; }
+  .icon:first-of-type {
+    opacity: 1;
+    position: static; }
+  .icon img {
+    width: 200px; }
 
 /*------------------------     form     ------------------------*/
 /*------------------------     gaps     ------------------------*/

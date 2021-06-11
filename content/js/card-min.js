@@ -1,0 +1,1 @@
+"use strict";var cardTl=gsap.timeline({defaults:{stagger:2,ease:"power2.out",reversed:!0}});cardTl.to(".change",{x:-368,rotate:-10,duration:1}).to(".change",{zIndex:0,x:0,rotate:0,duration:1},"<1"),ScrollTrigger.create({animation:cardTl,trigger:".block.-og",start:"center center",end:"+=1000px",scrub:!0,pin:!0});
