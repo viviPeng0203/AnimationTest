@@ -1,1 +1,1 @@
-"use strict";gsap.from(".block.-gn .fadeIn",{duration:.7,y:-40,rotate:-10,opacity:0,transformOrigin:"left bottom",stagger:.3});
+"use strict";gsap.from(".block.-gn .fadeIn",{duration:.7,y:-40,rotate:-10,opacity:0,transformOrigin:"left bottom",stagger:.3,scrollTrigger:{trigger:".block.-gn",start:"top 60%"}});

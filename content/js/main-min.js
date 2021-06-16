@@ -1,1 +1,1 @@
-"use strict";
+"use strict";$(function(){var t=$(".title").text();$(".title").text("");for(var r=0;r<t.length;r++){console.log(t[r]);var a="<span>"+t[r]+"</span>";$(".title").append(a)}gsap.from(".title span",{duration:2,opacity:0,stagger:{from:"random",each:.1},scrollTrigger:{trigger:".block.-gn",start:"top 60%"}})});

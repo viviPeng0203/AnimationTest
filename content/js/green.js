@@ -6,10 +6,10 @@ gsap.from('.block.-gn .fadeIn', {
   rotate: -10,
   opacity: 0,
   transformOrigin: 'left bottom',
-  stagger: 0.3 // scrollTrigger: {
-  //     trigger: '.block.-gn',
-  //     markers: true,
-  //     start: 'top 20%'
-  // }
-
+  stagger: 0.3,
+  scrollTrigger: {
+    trigger: '.block.-gn',
+    //markers: true,
+    start: 'top 60%'
+  }
 });
