@@ -19,7 +19,7 @@
     <!-- Page css / Begin -->
     
 <style>
-    svg {
+    #abstract {
         visibility: hidden
     }
 </style>
@@ -35,7 +35,13 @@
 <body>
     <!--[if lte IE 10]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
     <div class="l-container">
+        <header>
+            <a href="./index.html">index</a>
+            <a href="./svg.html">svg外框線、渲染</a>
+            <a href="./canvas.html">canvas</a>
+        </header>
         
+<p>外框線動畫</p>
 <svg version="1.1" id="abstract" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460.713 63.464" style="enable-background:new 0 0 460.713 63.464;" xml:space="preserve">
     <g>
         <path d="M20.683,3.198l17.879,57.676h-3.049l-11.947-38.23v-0.247v0.082c-0.22-0.604-0.591-1.098-1.112-1.483
@@ -94,6 +100,9 @@
                         V17.617z" />
     </g>
 </svg>
+<br>
+<p>渲染測試</p>
+<svg id="svg"></svg>
 
     </div>
     
@@ -104,9 +113,11 @@
     <script src="./content/vendor/jquery-3_5_1-min.js"></script>
     <!-- Page plugins -->
     
+<script src="./content/vendor/gsap/gsap.min.js"></script>
+<script src="./content/vendor/snap/snap.svg-min.js"></script>
 
     <script src="./content/js/plugins-min.js"></script>
-    <script src="./content/js/main-min.js"></script>
+    
     <!-- Global js / End -->
 
     <!-- Page js / Begin -->
@@ -140,6 +151,53 @@ $(function () {
   //var stopTime = (totalTime / monthLastDay) * dayNo;
   //console.log(stopTime);
   //setTimeout(function() { ellipsis.stop(); }, stopTime);
+
+  var s = Snap('#svg');
+  var path01 = 'M689,274.35c-87-83.86-185-221.28-261.95-190.22-49.78,20.09-125-47.83-200,20.65-58,53-143.83,18.48-164.48,101.09C46.37,270.81-55.53,448.1-15.3,500c73,94.15,349.16,142.7,408.34,106.28C451,570.6,512,624,581.28,575.92c59-40.93,45.29-190.61,76.86-227.33C690.55,310.91,755.57,338.48,689,274.35Z',
+      path02 = 'M567.72,119.34c-87-83.85-149.92-25.74-226.9,5.32-49.78,20.09-105.49-42.33-168-1.82C106.91,165.55,149.94,271.57,120.66,309c-41.23,52.73-14.5,139.12,25.72,191,73,94.16,146.18,118.74,205.36,82.32,58-35.68,119,17.67,188.24-30.36,59-40.94,45.29-190.62,76.86-227.33C649.24,287,634.25,183.48,567.72,119.34Z',
+      path03 = 'M387-112.92C300-196.77,234.61-275.5,157.63-244.44c-49.78,20.09-125-47.82-200,20.65-58,53-143.83,18.48-164.48,101.09-16.23,64.94,52.25,207.5,92.47,259.4C-41.42,230.86,31.8,255.44,91,219c58-35.68,119,17.67,188.24-30.36C338.25,147.72,324.5-2,356.07-38.67,388.48-76.36,453.5-48.78,387-112.92Z',
+      path04 = 'M387-112.92C300-196.77,234.61-275.5,157.63-244.44c-49.78,20.09-125-47.82-200,20.65-58,53-143.83,18.48-164.48,101.09-16.23,64.94,52.25,207.5,92.47,259.4,73,94.16,78.27,151.81,114.38,92.45C38,166.74,56.43,62.39,164,53.7,246.39,47,324.5-2,356.07-38.67,388.48-76.36,453.5-48.78,387-112.92Z',
+      path05 = 'M244,14C278,130,389.6,85.22,445.8,127s-7.13,148.15,61.65,211.18,227.77,15.05,286.62-46.49c46.26-48.38,3.27-232-6-297-16.76-117.94-68.2-175.55-137.68-173.21-68,2.28-94.63-74.27-178.57-66.83C400.31-239.09,338.12-102.21,292.53-86,245.71-69.29,218-74.64,244,14Z',
+      path06 = 'M544,389.64C520.75,271.07,447,315,355,264S263.2,151.91,90.6,176.46s-104,108.79-149.41,122.69c-64,19.59-91.59,105.71-88.35,171.28,5.88,119,51.77,181.07,121.14,185.12,68,4,87.41,82.67,171.68,83,71.81.25,146.33-130.28,193.24-142.28C387,584,561.79,480.33,544,389.64Z';
+  var bigCircle = s.path(path01);
+  var bigCircle2 = s.path(path03);
+  var f = s.filter(Snap.filter.blur(30, 30));
+  bigCircle.attr({
+    fill: "#e7d2ff",
+    fillOpacity: '0.8',
+    filter: f
+  });
+  bigCircle2.attr({
+    fill: "#c6e9ff",
+    fillOpacity: '0.8',
+    filter: f
+  });
+  var tlsvg = gsap.timeline({
+    defaults: {
+      ease: 'power2.out'
+    }
+  });
+  tlsvg.call(myFunction, null, '').call(myFunction2, null, '<4');
+
+  function myFunction() {
+    //console.log('svgtext');
+    bigCircle.animate({
+      d: path02
+    }, 3000);
+    bigCircle2.animate({
+      d: path04
+    }, 4000);
+  }
+
+  function myFunction2() {
+    //console.log('svgtext');
+    bigCircle.animate({
+      d: path06
+    }, 4000);
+    bigCircle2.animate({
+      d: path05
+    }, 8000);
+  }
 });
 </script>
 
