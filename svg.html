@@ -103,6 +103,43 @@
 <br>
 <p>渲染測試</p>
 <svg id="svg"></svg>
+<br>
+<p>路線移動</p>
+<div class="banner">
+    
+    <div class="tree">
+        <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 692.3 589.3" style="enable-background:new 0 0 692.3 589.3;" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    fill: url(#SVGID_1_);
+                }
+
+                .st1 {
+                    fill: none;
+                    stroke: #FFFFFF;
+                    stroke-miterlimit: 10;
+                }
+
+                .st2 {
+                    fill: none;
+                    stroke: yellow;
+                    stroke-miterlimit: 10;
+                    -webkit-filter: drop-shadow(0 0 5px yellow);
+                    filter: drop-shadow(0 0 5px yellow);
+                }
+            </style>
+            <radialGradient id="SVGID_1_" cx="346.1" cy="556.4" r="25" gradientTransform="matrix(1 0 0 -1 0 592)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" style="stop-color:#FFFFFF" />
+                <stop offset="0.8496" style="stop-color:#FFFFFF;stop-opacity:0" />
+            </radialGradient>
+            <circle class="st0" cx="346.1" cy="35.6" r="25" />
+            <path class="st2" d="M346.1,35.7L254,135h58.2L214,248h66.1L170,375l56,1c0,0-100.4,127-96.7,126s189.3,0,189.3,0l0.4,53l56-1.2
+	v-52.7l187,0.9l-97-127l54-1L412,247h65l-98-113h57L346.1,35.7z" />
+            <path class="st1" d="M346.1,35.7L254,135h58.2L214,248h66.1L170,375l56,1c0,0-100.4,127-96.7,126s189.3,0,189.3,0l0.4,53l56-1.2
+	v-52.7l187,0.9l-97-127l54-1L412,247h65l-98-113h57L346.1,35.7z" />
+        </svg>
+    </div>
+</div>
 
     </div>
     
@@ -114,6 +151,7 @@
     <!-- Page plugins -->
     
 <script src="./content/vendor/gsap/gsap.min.js"></script>
+<script src="./content/vendor/gsap/MotionPathPlugin.min.js"></script>
 <script src="./content/vendor/snap/snap.svg-min.js"></script>
 
     <script src="./content/js/plugins-min.js"></script>
@@ -198,6 +236,25 @@ $(function () {
       d: path05
     }, 8000);
   }
+
+  gsap.registerPlugin(MotionPathPlugin);
+  gsap.to('.st0', {
+    duration: 30,
+    repeat: -1,
+    ease: 'none',
+    motionPath: {
+      path: '.st1',
+      align: 'st1' //alignOrigin: [0.5, 0.5]
+
+    }
+  });
+  gsap.to('.st2', {
+    duration: 1,
+    repeat: -1,
+    ease: 'none',
+    opacity: 0,
+    yoyo: true
+  });
 });
 </script>
 

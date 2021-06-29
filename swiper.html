@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        國泰動態
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="manifest" href="./site.json" crossorigin="use-credentials">
+    
+    
+
+    <link rel="stylesheet" href="./content/css/normalize-min.css">
+    <!-- Page css / Begin -->
+    
+
+    <!-- Page css / End -->
+    <!-- Global css / Begin -->
+    <link rel="stylesheet" href="./content/css/layout-min.css">
+    <link rel="stylesheet" href="./content/css/main-min.css">
+    <!-- Global css / End -->
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <!--[if lte IE 10]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+    <div class="l-container">
+        <header>
+            <a href="./index.html">index</a>
+            <a href="./svg.html">svg外框線、渲染</a>
+            <a href="./canvas.html">canvas</a>
+        </header>
+        
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img src="./content/images/pig.gif" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="./content/images/pika.gif" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="./content/images/baby.gif" alt="">
+        </div>
+    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+    </div>
+    
+
+    <!-- Global js / Begin -->
+    <script src="./content/vendor/modernizr-3_11_0-min.js"></script>
+    <script src="./content/vendor/jquery-3_5_1-min.js"></script>
+    <!-- Page plugins -->
+    
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="./content/js/plugins-min.js"></script>
+    
+    <!-- Global js / End -->
+
+    <!-- Page js / Begin -->
+    
+<script>
+"use strict";
+
+$(function () {
+  var swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    loop: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+});
+</script>
+
+
+    <!-- Page js / End -->
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- <script>
+"use strict";
+
+window.ga = function () {
+  ga.q.push(arguments);
+};
+
+ga.q = [];
+ga.l = +new Date();
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');
+</script>
+ <script src="https://www.google-analytics.com/analytics.js" async="async"></script> -->
+</body>
+
+</html>

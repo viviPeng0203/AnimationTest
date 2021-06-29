@@ -494,6 +494,18 @@ header {
   header a + a {
     margin-left: 50px; }
 
+.banner {
+  padding: 50px 0;
+  background: linear-gradient(to bottom, #23453b, #3ba587); }
+  .banner img {
+    width: 100%; }
+  .banner .tree {
+    width: 500px; }
+
+.swiper-container {
+  width: 500px;
+  margin: auto; }
+
 /*------------------------     form     ------------------------*/
 /*------------------------     gaps     ------------------------*/
 .u-gapH {
