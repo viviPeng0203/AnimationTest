@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        國泰動態
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="manifest" href="./site.json" crossorigin="use-credentials">
+    
+    
+
+    <link rel="stylesheet" href="./content/css/normalize-min.css">
+    <!-- Page css / Begin -->
+    
+
+    <!-- Page css / End -->
+    <!-- Global css / Begin -->
+    <link rel="stylesheet" href="./content/css/layout-min.css">
+    <link rel="stylesheet" href="./content/css/main-min.css">
+    <!-- Global css / End -->
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <!--[if lte IE 10]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+    <div class="l-container">
+        <header>
+            <a href="./index.html">index</a>
+            <a href="./svg.html">svg外框線、渲染</a>
+            <a href="./parallax.html">滑鼠偏移＋毛玻璃</a>
+            <a href="./canvas.html">canvas</a>
+        </header>
+        
+<div class="bannerBox">
+    <p class="wt">div</p>
+    <div id="scene">
+        <div class="bg">
+            <div class="wrap"></div>
+        </div>
+        <div data-depth="0.2">
+            <div class="square"></div>
+        </div>
+        <div data-depth="0.2">
+            <div class="circle"></div>
+        </div>
+        <div data-depth="0.7">
+            <div class="card"></div>
+        </div>
+    </div>
+</div>
+<div class="bannerBox">
+    <p class="wt">svg</p>
+    <div class="sceneSvgBox">
+        <div class="wrap">
+            <svg id="scene2" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600">
+                <g></g>
+                <defs>
+                    <filter x="0" y="0" id="blur" filterUnits="userSpaceOnUse">
+                        <feGaussianBlur stdDeviation="10" />
+                    </filter>
+                    <filter x="0" y="0" id="blur2" filterUnits="userSpaceOnUse">
+                        <feGaussianBlur stdDeviation="10" />
+                    </filter>
+                </defs>
+                <rect data-depth="0.2" y="121.31" width="166.88" height="166.88" style="fill:#ffc200" />
+                <circle data-depth="0.2" cx="508.12" cy="346.96" r="91.88" style="fill:#00bfff" />
+                <rect data-depth="0.7" x="110.47" y="101.83" width="386.69" height="386.69" style="fill:darkslategrey;" />
+                <clipPath data-depth="0.5" id="clip-path">
+                    <rect id="clip-box" x="110.47" y="101.83" width="386.69" height="386.69" style="fill:none" />
+                </clipPath>
+                <rect data-depth="0.7" x="110.47" y="101.83" width="386.69" height="386.69" style="fill:rgba(255, 255, 255, 0.3);stroke:#fff; stroke-width:1;" />
+                <g data-depth="0.2" style="clip-path:url(#clip-path)">
+                    <rect y="121.31" width="166.88" height="166.88" style="fill:#ffc200;" filter="url('#blur')" />
+                </g>
+                <g data-depth="0.2" style="clip-path:url(#clip-path)">
+                    <circle class="circle" cx="508.12" cy="346.96" r="91.88" style="fill:#00bfff;" filter="url('#blur2')" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+
+    </div>
+    
+
+    <!-- Global js / Begin -->
+    <script src="./content/vendor/modernizr-3_11_0-min.js"></script>
+    <script src="./content/vendor/jquery-3_5_1-min.js"></script>
+    <!-- Page plugins -->
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <script src="./content/js/plugins-min.js"></script>
+    
+    <!-- Global js / End -->
+
+    <!-- Page js / Begin -->
+    
+<script>
+"use strict";
+
+$(function () {
+  var scene = document.getElementById('scene');
+  var parallaxInstance = new Parallax(scene, {
+    relativeInput: true
+  });
+  var scene2 = document.getElementById('scene2');
+  var parallaxInstance2 = new Parallax(scene2, {
+    relativeInput: true
+  });
+});
+</script>
+
+
+    <!-- Page js / End -->
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- <script>
+"use strict";
+
+window.ga = function () {
+  ga.q.push(arguments);
+};
+
+ga.q = [];
+ga.l = +new Date();
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');
+</script>
+ <script src="https://www.google-analytics.com/analytics.js" async="async"></script> -->
+</body>
+
+</html>
